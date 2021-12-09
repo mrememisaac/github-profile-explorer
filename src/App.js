@@ -1,36 +1,24 @@
+import React from 'react';
 import './App.css';
 import CardList from './Components/CardList';
 import Header from './Components/Header';
 
-function App() {
-  const profiles = [
-    {
-      login: "mrememisaac",
-      id: 19990286,
-      avatar_url: "https://avatars.githubusercontent.com/u/19990286?v=4",
-      name: "Emem Isaac",
-      company: null,
-      blog: "https://www.linkedin.com/in/ememisaac/",
-      location: "Abuja, Nigeria",
-      bio:"Loves to solve problems that are soluble in code, eager to meet new people and make friends. Proficient with .NET/C#, Laravel/PHP and Node/JS"
-    },
-    {
-      login: "mrememisaac",
-      id: 19990287,
-      avatar_url: "https://avatars.githubusercontent.com/u/19990286?v=4",
-      name: "Emem Isaac",
-      company: null,
-      blog: "https://www.linkedin.com/in/ememisaac/",
-      location: "Abuja, Nigeria",
-      bio:"Loves to solve problems that are soluble in code, eager to meet new people and make friends. Proficient with .NET/C#, Laravel/PHP and Node/JS"
-    }
-  ];
-  return (
+class App extends React.Component {
+  state = {profiles: []};
+
+  addProfile = (profileData) => {
+    this.setState({profiles: [profileData, ...this.state.profiles]});
+    console.log(this.state.profiles);
+  }
+
+  render(){
+    return(
     <div className="container-fluid">
-      <Header/>
-      <CardList profiles={profiles} />
+      <Header addProfile={this.addProfile} />
+      <CardList profiles={this.state.profiles} />
     </div>
-  );
+    );
+  }
 }
 
 export default App;
