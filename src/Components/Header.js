@@ -1,6 +1,7 @@
 import React from 'react'
+import FindProfile from './FindProfile2'
 
-export default function Header() {
+export default function Header(props) {
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
@@ -14,10 +15,7 @@ export default function Header() {
             <button class="nav-link active" aria-current="page">Home</button>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <FindProfile addProfile={props.addProfile}/>
       </div>
     </div>
   </nav>
