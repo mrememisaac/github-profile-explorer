@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import CardList from './Components/CardList';
+import Header from './Components/Header';
 
 function App() {
+  const profiles = [
+    {
+      login: "mrememisaac",
+      id: 19990286,
+      avatar_url: "https://avatars.githubusercontent.com/u/19990286?v=4",
+      name: "Emem Isaac",
+      company: null,
+      blog: "https://www.linkedin.com/in/ememisaac/",
+      location: "Abuja, Nigeria",
+      bio:"Loves to solve problems that are soluble in code, eager to meet new people and make friends. Proficient with .NET/C#, Laravel/PHP and Node/JS"
+    },
+    {
+      login: "mrememisaac",
+      id: 19990287,
+      avatar_url: "https://avatars.githubusercontent.com/u/19990286?v=4",
+      name: "Emem Isaac",
+      company: null,
+      blog: "https://www.linkedin.com/in/ememisaac/",
+      location: "Abuja, Nigeria",
+      bio:"Loves to solve problems that are soluble in code, eager to meet new people and make friends. Proficient with .NET/C#, Laravel/PHP and Node/JS"
+    }
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container-fluid">
+      <Header/>
+      <CardList profiles={profiles} />
     </div>
   );
 }
